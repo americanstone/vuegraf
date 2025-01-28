@@ -5,14 +5,21 @@ from setuptools import setup
 base_dir = os.path.dirname(__file__)
 setup(
     name='vuegraf',
-    version='1.3.4',
+    version='1.7.2',
     author='Jason Ertel',
+    long_description=open('README.md').read(),
+    long_description_content_type="text/markdown",
     url='https://github.com/jertel/vuegraf',
     description='Populate metrics from your Emporia Vue energy monitoring devices into an InfluxDB',
     setup_requires='setuptools',
     license='MIT',
+    project_urls={
+        "Documentation": "https://github.com/jertel/vuegraf",
+        "Source Code": "https://github.com/jertel/vuegraf",
+        "Discussion Forum": "https://github.com/jertel/vuegraf/discussions",
+    },
     classifiers=[
-        'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.12',
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
     ],
@@ -21,8 +28,9 @@ setup(
     },
     packages=find_packages(),
     install_requires=[
-        'influxdb>=5.2.3',
-        'influxdb_client>=1.15.0',
-        'pyemvue>=0.15.0'
+        'influxdb>=5.3.1',
+        'influxdb_client>=1.41.0',
+        'pyemvue>=0.18.4',
+        'argparse>= 1.4.0'
     ]
 )
